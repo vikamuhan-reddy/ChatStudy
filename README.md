@@ -81,12 +81,9 @@ server=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 server.bind(('localhost',9991))
 server.listen()
 client,addr = server.accept()
-
 done = False
-
 while not done:
     msg = client.recv(1024).decode('utf-8')
-
     if msg == 'quit':
         done =True
         client.close()
@@ -98,23 +95,19 @@ while not done:
 ### Client-Chat
 
 import socket
-
 client  = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 client.connect(('localhost',9991))
-
 done=False
-
 while not done:
     client.send(input("Message ").encode('utf-8'))
     msg = client.recv(1024).decode('utd-8')
-
     if msg == "Quit":
         done = True
         client.close()
         break
     else:
         print(msg)
- 
+        
 ## Output 
 ### Server-Chat
 <img width="995" alt="Screen Shot 1946-07-01 at 20 33 44" src="https://github.com/user-attachments/assets/38b03a79-0dae-4500-8e6a-ac0316d8cd09">
