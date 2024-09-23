@@ -76,6 +76,7 @@ Client-server chat applications are foundational to real-time communication over
 ## Program
 ### Server-Chat
 
+```py
 import socket
 server=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 server.bind(('localhost',9991))
@@ -91,9 +92,11 @@ while not done:
         break
     else:
         print(msg)
-   
+```
+
 ### Client-Chat
 
+```py
 import socket
 client  = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 client.connect(('localhost',9991))
@@ -107,7 +110,8 @@ while not done:
         break
     else:
         print(msg)
-        
+```
+
 ## Output 
 ### Server-Chat
 <img width="995" alt="Screen Shot 1946-07-01 at 20 33 44" src="https://github.com/user-attachments/assets/38b03a79-0dae-4500-8e6a-ac0316d8cd09">
